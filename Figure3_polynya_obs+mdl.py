@@ -332,7 +332,7 @@ cb = fig.colorbar(im1,orientation='horizontal',
                   extend='False', extendfrac=0.05, drawedges=False,
                 cax = cax
                  )
-cb.set_label('Sea ice concentration (%)',)
+cb.set_label('SIC (%)',)
 cb.ax.tick_params( width=0)
 
 
@@ -396,5 +396,5 @@ ax7.text(0, -0.3, '(g)', fontsize=10, transform=ax4.transAxes, va='top', ha='rig
 fig.text(0.43,0.92,"Observation",fontsize=12)
 fig.text(0.4,0.63,"CESM2-WACCM-FV2",fontsize=12)
 plt.subplots_adjust(hspace=0.4)
-plt.savefig('C:/Users/fzjxw/python/code/Figures/Figure3_all.png',dpi=300,bbox_inches='tight')
+plt.savefig('C:/Users/fzjxw/python/code/Figures/Figure3_all.pdf',dpi=300,bbox_inches='tight')
 #endregion

@@ -33,9 +33,9 @@ lat = file['lat']
 lev = file['lev']
 
 
-labelfont=24
-tickfont=24
-colorbarfont=24
+labelfont=40
+tickfont=40
+colorbarfont=40
 levels1=np.linspace(-1.5,1.5,50)
 tick_marks  = np.linspace(-1.5,1.5,5)
 
@@ -52,7 +52,7 @@ im1 = ax.contourf(lat,lev,thetao_dif[0],
 cs = ax.contourf(lat,lev, 1-pval3[0], levels=[0.9, 1] ,colors='none',hatches=['.', None],alpha=0)
 ct = ax.plot(lats,mlotst_max_mean_all[0],color='k',linewidth=2,linestyle='--',label='max_years')
 ct = ax.plot(lats,mlotst_min_mean_all[0],color='r',linewidth=2,linestyle='--',label='min_years')
-ax.set_ylabel('Depth (meter)',fontsize=24)
+ax.set_ylabel('Depth (meter)',fontsize=labelfont)
 # ax.set_xlabel('Latitude',fontsize=24)
 # ax.set_xticks([-50,-55,-60,-65,-70,-75])
 ax.set_xticks([-55,-65,-75])
@@ -91,7 +91,7 @@ cs = ax.contourf(lat,lev, 1-pval3[2], levels=[0.9, 1] ,colors='none',hatches=['.
 ct = ax.plot(lats,mlotst_max_mean_all[2],color='k',linewidth=2,linestyle='--',label='max_years')
 ct = ax.plot(lats,mlotst_min_mean_all[2],color='r',linewidth=2,linestyle='--',label='min_years')
 # ax.set_ylabel('Depth (meter)',fontsize=24)
-ax.set_xlabel('Latitude',fontsize=24)
+ax.set_xlabel('Latitude',fontsize=labelfont)
 # ax.set_xticks([-50,-55,-60,-65,-70,-75])
 ax.set_xticks([-55,-65,-75])
 ax.set_yticks(np.linspace(0,250,11)[::2])
@@ -154,7 +154,7 @@ plt.gca().invert_yaxis()
 ax.get_yaxis().set_visible(False)
 
 #————添加colorbar————
-plt.legend(fontsize=24,loc='lower right')
+plt.legend(fontsize=27,loc='lower right')
 cax = fig.add_axes([1, 0.1, 0.015, 0.9], aspect=18)
 cb = fig.colorbar(im1,orientation='vertical',
                   ticks =tick_marks,
@@ -162,7 +162,7 @@ cb = fig.colorbar(im1,orientation='vertical',
                   cax = cax
                  )
 cb.ax.tick_params(labelsize=colorbarfont, width=0)
-cb.set_label('Ocean temperature (°C)',fontsize=24)
+cb.set_label('Ocean temperature (°C)',fontsize=labelfont)
 # cb.dividers.set_color('k')
 #cb.outline.set_edgecolor('white')
 # cb.dividers.set_linewidth(1)

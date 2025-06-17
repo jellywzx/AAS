@@ -195,6 +195,6 @@ ax.legend(handles=legend_elements, loc='lower left',fontsize=8,bbox_to_anchor=(0
 #     cb.set_label('sea ice concentration(%)',fontsize=14)
 #     cb.ax.tick_params(labelsize=14, width=0)
 fig.tight_layout(rect=[0,0.08,1,0.95])
-plt.savefig('/stu02/weizx24/figures/0924/Figure1_all.png',dpi=300,bbox_inches='tight')
+plt.savefig('/stu02/weizx24/figures/0924/Figure1_all.pdf',dpi=300,bbox_inches='tight')
 plt.show()
 #endregion

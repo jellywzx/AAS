@@ -35,9 +35,9 @@ somx_max_mean = file_obs['somx_max_mean']
 somx_min_mean = file_obs['somx_min_mean']
 
 #region 出图方式二
-# labelfont=20
-tickfont=22
-colorbarfont=22
+labelfont=40
+tickfont=40
+colorbarfont=40
 levels1=np.linspace(-1.5,1.5,50)
 tick_marks  = np.linspace(-1.5,1.5,5)
 
@@ -50,7 +50,7 @@ fig = plt.figure(figsize=(20,7))
 #--------------------------------------
 ax = fig.add_subplot(161)
 figname = 'Oct '
-ax.set_title(figname,fontsize=24)
+ax.set_title(figname,fontsize=labelfont)
 
 im1 = ax.contourf(lat,lev,votemp_dif[0],
                  levels=levels1,
@@ -58,8 +58,8 @@ im1 = ax.contourf(lat,lev,votemp_dif[0],
 cs = ax.contourf(lat,lev, 1-pval3[0], levels=[0.95, 1] ,colors='none',hatches=['.', None],alpha=0)
 ax.plot(lat,somx_max_mean[0],linewidth=2,color='k',linestyle='--',label='Large')
 ax.plot(lat,somx_min_mean[0],linewidth=2,color='r',linestyle='--',label='Small')
-ax.set_ylabel('Depth (meter)',fontsize=24)
-ax.set_xlabel('Latitude',fontsize=24)
+ax.set_ylabel('Depth (meter)',fontsize=labelfont)
+ax.set_xlabel('Latitude',fontsize=labelfont)
 ax.set_xticks([-50,-55,-60,-65,-70,-75])
 ax.set_yticks(np.linspace(0,250,11)[::2])
 ax.yaxis.set_tick_params(labelsize=tickfont)
@@ -70,7 +70,7 @@ ax.xaxis.set_visible(False)
 #--------------------------------------
 ax = fig.add_subplot(162)
 figname = 'Nov '
-ax.set_title(figname,fontsize=24)
+ax.set_title(figname,fontsize=labelfont)
 
 im1 = ax.contourf(lat,lev,votemp_dif[1],
                  levels=levels1,
@@ -78,8 +78,8 @@ im1 = ax.contourf(lat,lev,votemp_dif[1],
 cs = ax.contourf(lat,lev, 1-pval3[1], levels=[0.95, 1] ,colors='none',hatches=['.', None],alpha=0)
 ax.plot(lat,somx_max_mean[1],linewidth=2,color='k',linestyle='--',label='Large')
 ax.plot(lat,somx_min_mean[1],linewidth=2,color='r',linestyle='--',label='Small')
-ax.set_ylabel('Depth (meter)',fontsize=24)
-ax.set_xlabel('Latitude',fontsize=24)
+ax.set_ylabel('Depth (meter)',fontsize=labelfont)
+ax.set_xlabel('Latitude',fontsize=labelfont)
 ax.set_xticks([-50,-55,-60,-65,-70,-75])
 ax.set_yticks(np.linspace(0,250,11)[::2])
 ax.yaxis.set_tick_params(labelsize=tickfont)
@@ -91,7 +91,7 @@ ax.xaxis.set_visible(False)
 #--------------------------------------
 ax = fig.add_subplot(163)
 figname = 'Dec '
-ax.set_title(figname,fontsize=24)
+ax.set_title(figname,fontsize=labelfont)
 
 im1 = ax.contourf(lat,lev,votemp_dif[2],
                  levels=levels1,
@@ -99,8 +99,8 @@ im1 = ax.contourf(lat,lev,votemp_dif[2],
 cs = ax.contourf(lat,lev, 1-pval3[2], levels=[0.95, 1] ,colors='none',hatches=['.', None],alpha=0)
 ax.plot(lat,somx_max_mean[2],linewidth=2,color='k',linestyle='--',label='Large')
 ax.plot(lat,somx_min_mean[2],linewidth=2,color='r',linestyle='--',label='Small')
-ax.set_ylabel('Depth (meter)',fontsize=24)
-ax.set_xlabel('Latitude',fontsize=24)
+ax.set_ylabel('Depth (meter)',fontsize=labelfont)
+ax.set_xlabel('Latitude',fontsize=labelfont)
 ax.set_xticks([-50,-55,-60,-65,-70,-75])
 ax.set_yticks(np.linspace(0,250,11)[::2])
 ax.yaxis.set_tick_params(labelsize=tickfont)
@@ -111,14 +111,14 @@ ax.xaxis.set_visible(False)
 #---------------------------------------
 ax = fig.add_subplot(164)
 figname = 'Jan '
-ax.set_title(figname,fontsize=24)
+ax.set_title(figname,fontsize=labelfont)
 im1 = ax.contourf(lat,lev,votemp_dif[3],
                  levels=levels1,
                  extend='both',shading='faceted', antialiased=True,cmap='RdBu_r')
 cs = ax.contourf(lat,lev, 1-pval3[3], levels=[0.95, 1] ,colors='none',hatches=['.', None],alpha=0)
 ax.plot(lat,somx_max_mean[3],linewidth=2,color='k',linestyle='--',label='Large')
 ax.plot(lat,somx_min_mean[3],linewidth=2,color='r',linestyle='--',label='Small')
-ax.set_xlabel('Latitude',fontsize=24)
+ax.set_xlabel('Latitude',fontsize=labelfont)
 ax.set_xticks([-50,-55,-60,-65,-70,-75])
 ax.set_yticks(np.linspace(0,250,11)[::2])
 ax.yaxis.set_tick_params(labelsize=tickfont)
@@ -129,14 +129,14 @@ ax.xaxis.set_visible(False)
 #--------------------------------
 ax = fig.add_subplot(165)
 figname = 'Feb '
-ax.set_title(figname,fontsize=24)
+ax.set_title(figname,fontsize=labelfont)
 im1 = ax.contourf(lat,lev,votemp_dif[4],
                  levels=levels1,
                  extend='both',shading='faceted', antialiased=True,cmap='RdBu_r')
 cs = ax.contourf(lat,lev, 1-pval3[4], levels=[0.95, 1] ,colors='none',hatches=['.', None],alpha=0)
 ax.plot(lat,somx_max_mean[4],linewidth=2,color='k',linestyle='--',label='Large')
 ax.plot(lat,somx_min_mean[4],linewidth=2,color='r',linestyle='--',label='Small')
-ax.set_xlabel('Latitude',fontsize=24)
+ax.set_xlabel('Latitude',fontsize=labelfont)
 ax.set_xticks([-50,-55,-60,-65,-70,-75])
 ax.set_yticks(np.linspace(0,250,11)[::2])
 ax.yaxis.set_tick_params(labelsize=tickfont)
@@ -148,14 +148,14 @@ ax.xaxis.set_visible(False)
 #----------------------------------
 ax = fig.add_subplot(166)
 figname = 'Mar '
-ax.set_title(figname,fontsize=24)
+ax.set_title(figname,fontsize=labelfont)
 im1 = ax.contourf(lat,lev,votemp_dif[5],
                  levels=levels1,
                  extend='both',shading='faceted', antialiased=True,cmap='RdBu_r')
 cs = ax.contourf(lat,lev, 1-pval3[5], levels=[0.95, 1] ,colors='none',hatches=['.', None],alpha=0)
 ax.plot(lat,somx_max_mean[5],linewidth=2,color='k',linestyle='--',label='Large')
 ax.plot(lat,somx_min_mean[5],linewidth=2,color='r',linestyle='--',label='Small')
-ax.set_xlabel('Latitude',fontsize=24)
+ax.set_xlabel('Latitude',fontsize=labelfont)
 ax.set_xticks([-50,-55,-60,-65,-70,-75])
 ax.set_yticks(np.linspace(0,250,11)[::2])
 ax.yaxis.set_tick_params(labelsize=tickfont)
@@ -164,7 +164,7 @@ plt.gca().invert_yaxis()
 ax.yaxis.set_visible(False)
 ax.xaxis.set_visible(False)
 #————添加colorbar————
-plt.legend(fontsize=24,loc='lower right')
+plt.legend(fontsize=27,loc='lower right')
 cax = fig.add_axes([1, 0.1, 0.015, 0.9], aspect=18)
 cb = fig.colorbar(im1,orientation='vertical',
                   ticks =tick_marks,
@@ -173,7 +173,7 @@ cb = fig.colorbar(im1,orientation='vertical',
                   cax = cax
                  )
 cb.ax.tick_params(labelsize=colorbarfont, width=0)
-cb.set_label('Ocean temperature (°C)',fontsize=24)
+cb.set_label('Ocean temperature (°C)',fontsize=labelfont)
 # cb.dividers.set_color('k')
 #cb.outline.set_edgecolor('white')
 # cb.dividers.set_linewidth(1)
@@ -183,151 +183,3 @@ plt.show()
 
 
 #endregion
-
-#region 模式出图
-
-
-#endregion
-
-'''
-#region 出图方式一
-levels1=np.linspace(-1.5,1.5,50)
-tick_marks  = np.linspace(-1.5,1.5,5)
-fig = plt.figure(figsize=(160/25.4,2.5))
-#--------------------------------------
-ax = fig.add_subplot(161)
-figname = 'Oct '
-ax.set_title(figname)
-im1 = ax.contourf(lat,lev,votemp_dif[0],
-                 levels=levels1,
-                 extend='both',shading='faceted', antialiased=True,cmap='RdBu_r')
-cs = ax.contourf(lat,lev, 1-pval3[0], levels=[0.95, 1] ,colors='none',hatches=['...', None],alpha=0,linewidth=0.5)
-ax.plot(lat,somx_max_mean[0],color='k',linestyle='--',label='large')
-ax.plot(lat,somx_min_mean[0],color='r',linestyle='--',label='small')
-ax.set_ylabel('Depth (m)',)
-# ax.set_xlabel('Latitude')
-ax.set_xticks([-50,-55,-60,-65,-70,-75])
-ax.set_yticks(np.linspace(0,250,11)[::2])
-# ax.yaxis.set_tick_params(labelsize=tickfont)
-# ax.xaxis.set_tick_params(labelsize=tickfont)
-plt.gca().invert_yaxis()
-# ax.yaxis.set_visible(False)
-
-
-#--------------------------------------
-ax = fig.add_subplot(162)
-figname = 'Nov '
-ax.set_title(figname)
-
-im1 = ax.contourf(lat,lev,votemp_dif[1],
-                 levels=levels1,
-                 extend='both',shading='faceted', antialiased=True,cmap='RdBu_r')
-cs = ax.contourf(lat,lev, 1-pval3[1], levels=[0.95, 1] ,colors='none',hatches=['...', None],alpha=0,linewidth=0.5)
-ax.plot(lat,somx_max_mean[1],color='k',linestyle='--',label='large')
-ax.plot(lat,somx_min_mean[1],color='r',linestyle='--',label='small')
-ax.set_ylabel('Depth (m)')
-# ax.set_xlabel('Latitude')
-ax.set_xticks([-50,-55,-60,-65,-70,-75])
-ax.set_yticks(np.linspace(0,250,11)[::2])
-# ax.yaxis.set_tick_params(labelsize=tickfont)
-# ax.xaxis.set_tick_params(labelsize=tickfont)
-plt.gca().invert_yaxis()
-ax.yaxis.set_visible(False)
-
-
-#--------------------------------------
-ax = fig.add_subplot(163)
-figname = 'Dec '
-ax.set_title(figname)
-
-im1 = ax.contourf(lat,lev,votemp_dif[2],
-                 levels=levels1,
-                 extend='both',shading='faceted', antialiased=True,cmap='RdBu_r')
-cs = ax.contourf(lat,lev, 1-pval3[2], levels=[0.95, 1] ,colors='none',hatches=['...', None],alpha=0,linewidth=0.5)
-ax.plot(lat,somx_max_mean[2],color='k',linestyle='--',label='large')
-ax.plot(lat,somx_min_mean[2],color='r',linestyle='--',label='small')
-ax.set_ylabel('Depth (meter)')
-# ax.set_xlabel('Latitude')
-ax.set_xticks([-50,-55,-60,-65,-70,-75])
-ax.set_yticks(np.linspace(0,250,11)[::2])
-# ax.yaxis.set_tick_params(labelsize=tickfont)
-# ax.xaxis.set_tick_params(labelsize=tickfont)
-plt.gca().invert_yaxis()
-ax.yaxis.set_visible(False)
-
-#---------------------------------------
-ax = fig.add_subplot(164)
-figname = 'Jan '
-ax.set_title(figname)
-im1 = ax.contourf(lat,lev,votemp_dif[3],
-                 levels=levels1,
-                 extend='both',shading='faceted', antialiased=True,cmap='RdBu_r')
-cs = ax.contourf(lat,lev, 1-pval3[3], levels=[0.95, 1] ,colors='none',hatches=['...', None],alpha=0,linewidth=0.5)
-ax.plot(lat,somx_max_mean[3],color='k',linestyle='--',label='large')
-ax.plot(lat,somx_min_mean[3],color='r',linestyle='--',label='small')
-ax.set_xlabel('Latitude')
-ax.set_xticks([-55,-65,-75])
-ax.set_yticks(np.linspace(0,250,11)[::2])
-# ax.yaxis.set_tick_params(labelsize=tickfont)
-# ax.xaxis.set_tick_params(labelsize=tickfont)
-plt.gca().invert_yaxis()
-ax.yaxis.set_visible(False)
-
-#--------------------------------
-ax = fig.add_subplot(165)
-figname = 'Feb '
-ax.set_title(figname)
-im1 = ax.contourf(lat,lev,votemp_dif[4],
-                 levels=levels1,
-                 extend='both',shading='faceted', antialiased=True,cmap='RdBu_r')
-cs = ax.contourf(lat,lev, 1-pval3[4], levels=[0.95, 1] ,colors='none',hatches=['...', None],alpha=0,linewidth=0.5)
-ax.plot(lat,somx_max_mean[4],color='k',linestyle='--',label='large')
-ax.plot(lat,somx_min_mean[4],color='r',linestyle='--',label='small')
-# ax.set_xlabel('Latitude')
-ax.set_xticks([-55,-65,-75])
-ax.set_yticks(np.linspace(0,250,11)[::2])
-# ax.yaxis.set_tick_params(labelsize=tickfont)
-# ax.xaxis.set_tick_params(labelsize=tickfont)
-plt.gca().invert_yaxis()
-ax.yaxis.set_visible(False)
-
-
-#----------------------------------
-ax = fig.add_subplot(166)
-figname = 'Mar '
-ax.set_title(figname)
-im1 = ax.contourf(lat,lev,votemp_dif[5],
-                 levels=levels1,
-                 extend='both',shading='faceted', antialiased=True,cmap='RdBu_r')
-cs = ax.contourf(lat,lev, 1-pval3[5], levels=[0.95, 1] ,colors='none',hatches=['...', None],alpha=0,linewidth=0.5)
-ax.plot(lat,somx_max_mean[5],color='k',linestyle='--',label='large')
-ax.plot(lat,somx_min_mean[5],color='r',linestyle='--',label='small')
-# ax.set_xlabel('Latitude')
-# ax.set_xticks([-50,-55,-60,-65,-70,-75])
-ax.set_xticks([-55,-65,-75])
-ax.set_yticks(np.linspace(0,250,11)[::2])
-# ax.yaxis.set_tick_params(labelsize=tickfont)
-# ax.xaxis.set_tick_params(labelsize=tickfont)
-plt.gca().invert_yaxis()
-ax.yaxis.set_visible(False)
-ax.legend(fontsize=9,loc='lower right')
-#————添加colorbar————
-
-cax = fig.add_axes([0.93, 0.05, 0.015, 0.9], aspect=25)
-cb = fig.colorbar(im1,orientation='vertical',
-                  ticks =tick_marks,
-                  extend='both', extendfrac=0.05,
-#                   drawedges=True,
-                  cax = cax
-                 )
-cb.ax.tick_params( width=0)
-cb.set_label('Ocean temperature (°C)')
-# cb.dividers.set_color('k')
-#cb.outline.set_edgecolor('white')
-# cb.dividers.set_linewidth(1)
-# fig.tight_layout(rect=[0,0.1,1,0.95])
-plt.subplots_adjust(wspace=0.1)
-plt.savefig('/stu02/weizx24/figures/0924/Figure6_obs.png' ,dpi=300,bbox_inches='tight')
-plt.show()
-#endregion
-'''

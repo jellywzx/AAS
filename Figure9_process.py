@@ -78,7 +78,7 @@ plt.rcParams['axes.titlesize'] = 10  # 轴标题字体大小
 plt.rcParams['lines.markersize'] = 1 
 # plt.rc('font', family='Arial', size=9)
 
-
+#——————————图1————————————————
 fig = plt.figure(figsize=(5.9,5.2))
 ax1 = fig.add_subplot(221)
 #画出散点图分布，计算变量的相关性
@@ -92,16 +92,17 @@ ax1.set_xticks([0,0.05,0.1,0.15,0.2,0.25,0.3])
 ax1.set_yticks(np.linspace(970,1000,5))
 # ax1.set_xticks([-0.1,-0.05,0,0.05,0.1,])
 # ax1.set_yticks(np.linspace(-5,15,5))
-ax1.set_ylabel('Sector Pressure (hPa)')
+ax1.set_ylabel('Sector pressure (hPa)')
 ax1.set_xlabel('Areas'+ r' (10$^{6}$ km$^{2}$)')
 ax1.grid(linestyle='--',alpha=0.5)
 props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
-ax1.text(0.5, 0.9,'pearson r: '+str(round(p[0],2))+'\n'+'p value <0.05',
+ax1.text(0.4, 0.9,'Pearson\'s r: '+str(round(p[0],2))+'\n'+'p value <0.05',
         transform=ax1.transAxes, 
         verticalalignment='top', bbox=props,)
 ax1.text(0, 1.13, '(a)', fontsize=12, transform=ax1.transAxes, va='top', ha='right')
 props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
-#-----------------第三张图----------------------------
+
+#——————————图2————————————————
 ax2= fig.add_subplot(222)
 ax2.scatter(opwa,flux_sea,marker='o',color='k')
 p = pearsonr(opwa,flux_sea)
@@ -121,7 +122,7 @@ ax2.grid(linestyle='--',alpha=0.5)
 # ax.set_title(figname,fontsize=22)
 # ax.grid(color='lightgray',linestyle='--',linewidth=3)
 props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
-ax2.text(0.5, 0.2,'pearson r: '+str(round(p[0],2))+'\n'+'p value < 0.05',
+ax2.text(0.5, 0.2,'Pearson\'s r: '+str(round(p[0],2))+'\n'+'p value < 0.05',
         transform=ax2.transAxes,
         verticalalignment='top', bbox=props,)
 ax2.text(0, 1.13, '(b)', fontsize=12, transform=ax2.transAxes, va='top', ha='right')
@@ -168,7 +169,7 @@ flux_sea = np.load('D:/npz/CMIP6_seaiceareaflux_0615.npz')['flux_sea']
 # flux_sea = signal.detrend(flux_sea)
 
 
-#-----------第1张图 ----Sector Center Pressure---------------
+#——————————图3————————————————
 # fig = plt.figure(figsize=(20,6))
 ax3 = fig.add_subplot(223)
 #画出散点图分布，计算变量的相关性
@@ -179,7 +180,7 @@ print(p)
 aa,intercept,r_value,p1,std_err = stats.linregress(ross_sie_cmip6,psl_ON,)
 y = aa*np.array(ross_sie_cmip6)+intercept
 ax3.plot(ross_sie_cmip6,y,color='k')
-ax3.set_ylabel('Sector Pressure (hPa)')
+ax3.set_ylabel('Sector pressure (hPa)')
 ax3.set_xlabel('Areas '+ r' (10$^{6}$ km$^{2}$)')
 ax3.set_xticks([0,0.05,0.1,0.15,0.2,0.25,0.3])
 ax3.set_yticks(np.linspace(970,1000,5))
@@ -192,13 +193,13 @@ ax3.grid(linestyle='--',alpha=0.5)
 # ax.set_title(figname,fontsize=22)
 # ax.grid(color='lightgray',linestyle='--',linewidth=3)
 props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
-ax3.text(0.5, 0.9,'pearson r: '+str(round(p[0],2))+'\n'+'p value:<0.05',
+ax3.text(0.4, 0.9,'Pearson\'s r: '+str(round(p[0],2))+'\n'+'p value:<0.05',
         transform=ax3.transAxes, 
         verticalalignment='top', bbox=props,)
 ax3.text(0, 1.13, '(c)', fontsize=12, transform=ax3.transAxes, va='top', ha='right')
 props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
 
-#---------第3张图-----area flux---------------
+#——————————图4————————————————
 from scipy.stats import pearsonr
 ax4 = fig.add_subplot(224)
 #画出散点图分布，计算变量的相关性
@@ -221,11 +222,11 @@ ax4.grid(linestyle='--',alpha=0.5)
 # ax.set_title(figname,fontsize=22)
 # ax.grid(color='lightgray',linestyle='--',linewidth=3)
 props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
-ax4.text(0.5, 0.2,'pearson r: '+str(round(p[0],2))+'\n'+'p value:<0.05',
+ax4.text(0.5, 0.2,'Pearson\'s r: '+str(round(p[0],2))+'\n'+'p value:<0.05',
         transform=ax4.transAxes, 
         verticalalignment='top', bbox=props,)
 ax4.text(0, 1.13, '(d)', fontsize=12, transform=ax4.transAxes, va='top', ha='right')
 props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
 plt.subplots_adjust(hspace=0.35, wspace=0.35)
-plt.savefig('C:/Users/fzjxw/python/code/Figures//Figure9.png' ,dpi=300,bbox_inches = 'tight')
+plt.savefig('C:/Users/fzjxw/python/code/Figures/Figure9.pdf' ,dpi=300,bbox_inches = 'tight')
 plt.show()
